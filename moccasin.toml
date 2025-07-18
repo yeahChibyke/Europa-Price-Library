@@ -1,0 +1,26 @@
+
+[project]
+src = "src"
+out = "out"
+dot_env = ".env"
+
+[networks.contracts.price_feed]
+deployer_script = "script/deploy_mocks.py"
+
+[networks.pyevm]
+is_zksync = false
+
+[networks.sepolia]
+url = "$SEPOLIA_URL"
+prompt_live = false
+chain_id = 11155111
+save_to_db = false 
+default_account_name = "devkey"
+explorer_uri = "https://eth-sepolia.blockscout.com/"
+explorer_type = "blockscout"
+
+[networks.sepolia.contracts.price_feed]
+address = "0x1a81afB8146aeFfCFc5E50e8479e826E7D55b910"
+deployer_script = "script/deploy_mocks.py"
+
+# You can view all configuration options at https://cyfrin.github.io/moccasin/all_moccasin_toml_parameters.html
