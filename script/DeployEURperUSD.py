@@ -9,6 +9,7 @@ def deploy_per_eur(price_feed: VyperContract) -> VyperContract:
     usd_amount: int = 1
     eur_equivalent: int = per_eur.getUSDperEUR(usd_amount)
     print(f"{usd_amount} USD is worth {eur_equivalent} EUR ")
+    breakpoint()
     return per_eur 
 
 def mocassin_main() -> VyperContract:
