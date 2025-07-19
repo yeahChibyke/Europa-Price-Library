@@ -1,5 +1,9 @@
-# pragma version ^0.4.0
-# @license MIT
+# pragma version >=0.4.0
+"""
+@license MIT
+@title Mock Aggregator V3 Interface
+@notice This is a mock implementation of the AggregatorV3Interface for testing purposes.
+"""
 
 DECIMALS: immutable(uint8)
 latestAnswer: public(int256)
