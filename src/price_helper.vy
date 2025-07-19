@@ -1,5 +1,9 @@
-# pragma version ^0.4.0 
-# @license MIT
+# pragma version >=0.4.0 
+"""
+@license MIT
+@title Price Helper
+@notice This module provides a helper function to convert USD amounts to EUR using a price feed.
+"""
 
 from interfaces import AggregatorV3Interface
 

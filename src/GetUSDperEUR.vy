@@ -1,5 +1,9 @@
-# pragma version ^0.4.0 
-# @license MIT
+# pragma version >=0.4.0 
+"""
+@license MIT
+@title Get USD per EUR
+@notice This contract retrieves the USD to EUR exchange rate using a price feed.
+"""
 
 from interfaces import AggregatorV3Interface 
 import price_helper 
