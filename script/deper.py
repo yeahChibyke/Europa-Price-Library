@@ -1,16 +1,14 @@
 from moccasin.config import get_active_network
 from moccasin.boa_tools import VyperContract
-from src import GetUSDperEUR
-
+from src import GetETHperEUR
 
 def deploy_per_eur(price_feed: VyperContract) -> VyperContract:
-    per_eur: VyperContract = GetUSDperEUR.deploy(price_feed)
+    per_eur: VyperContract = GetETHperEUR.deploy(price_feed)
 
     usd_amount: int = 1
-    eur_equivalent: int = per_eur.getUSDperEUR(usd_amount)
-    print(f"{usd_amount} USD is worth {eur_equivalent} EUR ")
+    eur_equivalent: int = per_eur.getETHperEUR(usd_amount)
+    print(f"{usd_amount} ETH is worth {eur_equivalent} EUR ")
     return per_eur
-
 
 def moccasin_main() -> VyperContract:
     active_network = get_active_network()
@@ -20,5 +18,3 @@ def moccasin_main() -> VyperContract:
     )
     return deploy_per_eur(price_feed)
 
-# .86_206_896.00 --> mocks 
-# .86_017_805. 00 --> sepolia
