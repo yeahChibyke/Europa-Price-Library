@@ -5,8 +5,15 @@
 @notice This module provides a helper function to convert USD amounts to EUR using a price feed.
 """
 
+# -- Imports -- #
+
 from interfaces import AggregatorV3Interface
 
+# -- Variables -- #
+
+PRECISION: constant(uint256) = 1 * (10**18)
+
+# -- Internal Defs -- #
 
 @internal
 def _get_usd_to_eur(
@@ -16,8 +23,10 @@ def _get_usd_to_eur(
     assert price > 0, "Invalid price!!!"
     dec8: uint8 = staticcall price_feed.decimals()
     dec: uint256 = convert(dec8, uint256)
+    CATCH_UP: uint256 = 1 * (10 ** dec)
 
-    eth_price: uint256 = convert(price, uint256) // (10**dec)
-    eth_equivalent: uint256 = (usd_amount * (10**dec)) // eth_price
-    return eth_equivalent
-    # will return results in e8...divide result by e8 to get real-world pricing
+    eur_to_usd_price: uint256 = convert(price, uint256) * (10 ** 10)
+    eur_eq: uint256 = (usd_amount * PRECISION * CATCH_UP) // eur_to_usd_price
+    return eur_eq
+    # @dev: divide result by e8 to get real-world price
+

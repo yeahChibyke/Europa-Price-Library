@@ -11,3 +11,5 @@ def deploy_eur() -> VyperContract:
 
 def moccasin_main():
     return deploy_eur()
+
+# 1_00_000_000.00

@@ -20,3 +20,4 @@ def __init__(address_to_use: address):
 @external
 def getUSDperEUR(usdAmount: uint256) -> uint256:
     return price_helper._get_usd_to_eur(PRICE_FEED, usdAmount)
+ 

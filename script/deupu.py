@@ -19,3 +19,6 @@ def moccasin_main() -> VyperContract:
         f"Currently running on {active_network.name} network and using price feed at {price_feed.address}"
     )
     return deploy_per_eur(price_feed)
+
+# .86_206_896.00 --> mocks 
+# .86_017_805. 00 --> sepolia
