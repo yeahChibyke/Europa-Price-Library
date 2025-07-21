@@ -34,7 +34,7 @@ def _get_eth_to_eur(price_feed: AggregatorV3Interface, eth_amount: uint256) -> u
     FACTOR: uint256 = 1
     eth_per_usd: uint256 = self._get_eth_to_usd(price_feed, FACTOR)
     usd_per_eur: uint256 = price_helper._get_usd_to_eur(price_feed, FACTOR)
-    eur_eq: uint256 = (eth_per_usd * usd_per_eur)
+    eur_eq: uint256 = eth_per_usd * usd_per_eur
     return eur_eq
 
     # 9999_999_936_000_000.00
