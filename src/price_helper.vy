@@ -23,10 +23,9 @@ def _get_usd_to_eur(
     assert price > 0, "Invalid price!!!"
     dec8: uint8 = staticcall price_feed.decimals()
     dec: uint256 = convert(dec8, uint256)
-    CATCH_UP: uint256 = 1 * (10 ** dec)
+    CATCH_UP: uint256 = 1 * (10**dec)
 
-    eur_to_usd_price: uint256 = convert(price, uint256) * (10 ** 10)
+    eur_to_usd_price: uint256 = convert(price, uint256) * (10**10)
     eur_eq: uint256 = (usd_amount * PRECISION * CATCH_UP) // eur_to_usd_price
     return eur_eq
     # @dev: divide result by e8 to get real-world price
-
